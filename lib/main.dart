@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
+import "buttons/start_button.dart";
+import "layout/desktop_homepage.dart";
+
 void main() {
   runApp(
     const StudyGo(),
@@ -32,20 +35,22 @@ class Home extends StatelessWidget {
     ];
 
     return Scaffold(
-      floatingActionButton: const FloatingButton(),
+      floatingActionButton: const StartButton(),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           final double width = constraints.maxWidth - constraints.minWidth;
 
-          if (constraints.maxWidth > 600) {
-            return Container(
-              padding: const EdgeInsetsDirectional.all(16),
-              child: const Text("Gay!"),
-            );
+          if (constraints.maxWidth > 900) {
+            /* desktop */
+
+            return DesktopHomepage();
+
+            /* enddesktop */
           } else {
-            /* Mobile probably idk what 600 is */
+            /* Mobile or thin desktop */
+
             return Scaffold(
-              floatingActionButton: const FloatingButton(),
+              floatingActionButton: const StartButton(),
               body: Container(
                 height: 200,
                 padding: const EdgeInsetsDirectional.all(16),
@@ -68,26 +73,11 @@ class Home extends StatelessWidget {
                 ),
               ),
             );
+
+            /* endmobile */
           }
         },
       ),
-    );
-  }
-}
-
-class FloatingButton extends StatelessWidget {
-  const FloatingButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton.small(
-      onPressed: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Text"),
-          ),
-        );
-      },
     );
   }
 }
