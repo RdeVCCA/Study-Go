@@ -1,8 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'dart:io' show Platform;
+
+import 'fuschia/fuschia.dart';
+import 'desktop/desktop.dart';
+import 'mobile/mobile.dart';
 
 void main() {
   runApp(
@@ -26,40 +27,12 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          if ((constraints.maxWidth - constraints.minWidth) > 900) {
-            return Row(
-              children: <Widget>[
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Card(
-                    child: Text("aoeu"),
-                  ),
-                ),
-                Column(
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Card(
-                        child: Text("snth"),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text("snth"),
-                    ),
-                  ],
-                )
-              ],
-            );
-          } else {
-            return // mobile
-                Container(child: Text("AOESAOETNUHOSENTUONSETU"));
-          }
-        },
-      ),
-    );
+    if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+      return Desktop();
+    } else if (Platform.isIOS || Platform.isAndroid) {
+      return Mobile();
+    } else {
+      return Fuschia();
+    }
   }
 }
