@@ -10,16 +10,18 @@ class Desktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          if ((constraints.maxWidth - constraints.minWidth) > 900) {
-            return Widescreen();
-          } else {
-            return Container(
-              child: const Text("AOESAOETNUHOSENTUONSETU"),
-            );
-          }
-        },
+      body: SingleChildScrollView(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            if ((constraints.maxWidth - constraints.minWidth) > 900) {
+              return Widescreen();
+            } else {
+              return Container(
+                child: const Text("AOESAOETNUHOSENTUONSETU"),
+              );
+            }
+          },
+        ),
       ),
     );
   }

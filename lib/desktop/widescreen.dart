@@ -1,9 +1,10 @@
+import 'dart:async';
 import 'dart:collection';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-import 'leaderboard.dart';
+import 'widescreen/leaderboard.dart';
 
 class Widescreen extends StatelessWidget {
   const Widescreen({
@@ -13,14 +14,15 @@ class Widescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Leaderboard(),
         Column(
           children: <Widget>[
             Container(
               alignment: Alignment.topLeft,
-              child: const Card(
-                child: Text("snth"),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(),
               ),
             ),
             Container(

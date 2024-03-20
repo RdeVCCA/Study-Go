@@ -30,13 +30,13 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    if (Platform.isWindows || Platform.isLinux) {
       return Desktop();
     } else if (Platform.isAndroid) {
       return const Mobile();
-    } else if (Platform.isIOS) {
-      return const Text("Compiling for IOS is not supported.\n"
-          "Please contact $iosMaintainer to retrieve the code for IOS.");
+    } else if (Platform.isIOS || Platform.isMacOS) {
+      return const Text("Compiling for IOS or OSX is not supported.\n"
+          "Please contact $iosMaintainer to retrieve the code for your system.");
     } else {
       return const Fuschia();
     }

@@ -1,43 +1,46 @@
 import 'package:flutter/material.dart';
 
 class Leaderboard extends StatelessWidget {
-  Leaderboard({super.key});
+  const Leaderboard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      child: FittedBox(
-        fit: BoxFit.cover,
-        child: Container(
-          width: 700,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: const Color(0xffeeeeee),
-              width: 1,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minWidth: 716),
+        child: FittedBox(
+          fit: BoxFit.cover,
+          child: Container(
+            width: 700,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: const Color(0xffeeeeee),
+                width: 1,
+              ),
             ),
-          ),
-          margin: const EdgeInsets.all(8),
-          child: SizedBox(
-            child: Column(
-              children: <Widget>[
-                const Text(
-                  "Leaderboard",
-                  style: TextStyle(
-                    fontSize: 20,
+            margin: const EdgeInsets.all(8),
+            child: SizedBox(
+              child: Column(
+                children: <Widget>[
+                  const Text(
+                    "\nLeaderboard",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                ListView.builder(
-                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) => Container(
-                    alignment: Alignment.topLeft,
-                    child: LeaderboardItem(index: index),
+                  ListView.builder(
+                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => Container(
+                      alignment: Alignment.topLeft,
+                      child: LeaderboardItem(index: index),
+                    ),
+                    itemCount: 15,
                   ),
-                  itemCount: 15,
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
