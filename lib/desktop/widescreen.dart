@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'dart:async';
 import 'dart:collection';
 import 'dart:ffi';
@@ -17,11 +19,11 @@ class Widescreen extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Leaderboard(),
+        const Leaderboard(),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Clock(),
+            const Clock(),
             Container(
               alignment: Alignment.topLeft,
               child: const Text("snth"),
