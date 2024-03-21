@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'widescreen.dart';
 import 'widescreen/app_bar.dart';
-
-enum Menu {
-  account,
-  settings,
-}
+import 'widescreen/start_button.dart';
 
 class Desktop extends StatefulWidget {
   const Desktop({
@@ -21,7 +18,7 @@ class _DesktopState extends State<Desktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DesktopAppBar(),
+      appBar: const DesktopAppBar(),
       body: SingleChildScrollView(
         child: LayoutBuilder(
           builder: (context, constraints) {
@@ -35,6 +32,7 @@ class _DesktopState extends State<Desktop> {
           },
         ),
       ),
+      floatingActionButton: DesktopStartButton(),
     );
   }
 }
