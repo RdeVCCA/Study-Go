@@ -5,6 +5,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 
 import 'widescreen/leaderboard.dart';
+import 'widescreen/timer.dart';
 
 class Widescreen extends StatelessWidget {
   const Widescreen({
@@ -18,13 +19,9 @@ class Widescreen extends StatelessWidget {
       children: <Widget>[
         Leaderboard(),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              alignment: Alignment.topLeft,
-              child: ConstrainedBox(
-                constraints: BoxConstraints(),
-              ),
-            ),
+            Clock(),
             Container(
               alignment: Alignment.topLeft,
               child: const Text("snth"),
