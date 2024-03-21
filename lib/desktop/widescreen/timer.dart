@@ -14,7 +14,7 @@ class _ClockState extends State<Clock> {
   static final Stopwatch timer = Stopwatch();
 
   late Timer _timer;
-  String result = "";
+  String result = "0:00:00";
 
   void start() {
     _timer = Timer.periodic(
