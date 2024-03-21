@@ -34,6 +34,7 @@ class _ClockState extends State<Clock> {
   void stop() {
     _timer.cancel();
     timer.stop();
+    // TODO implement scoring
   }
 
   reset() {
@@ -55,7 +56,7 @@ class _ClockState extends State<Clock> {
       ),
       alignment: Alignment.topLeft,
       child: ConstrainedBox(
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           minWidth: 168,
           minHeight: 56,
         ),
@@ -65,7 +66,7 @@ class _ClockState extends State<Clock> {
             child: Text(
               result,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 30),
+              style: const TextStyle(fontSize: 30),
             ),
           ),
         ),
