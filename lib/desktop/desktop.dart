@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'widescreen.dart';
 import 'widescreen/app_bar.dart';
@@ -23,16 +22,14 @@ class _DesktopState extends State<Desktop> {
         child: LayoutBuilder(
           builder: (context, constraints) {
             if ((constraints.maxWidth - constraints.minWidth) > 900) {
-              return const Widescreen();
+              return const Center(child: Widescreen());
             } else {
-              return Container(
-                child: const Text("AOESAOETNUHOSENTUONSETU"),
-              );
+              return const Text("AOESAOETNUHOSENTUONSETU");
             }
           },
         ),
       ),
-      floatingActionButton: DesktopStartButton(),
+      floatingActionButton: const DesktopStartButton(),
     );
   }
 }

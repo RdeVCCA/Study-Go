@@ -16,21 +16,29 @@ class Widescreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        const Leaderboard(),
-        Column(
+    return Container(
+      color: const Color(0xffeeeeee),
+      child: Container(
+        color: const Color(0xffffffff),
+        width: 900,
+        alignment: Alignment.center,
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Clock(),
-            Container(
-              alignment: Alignment.topLeft,
-              child: const Text("snth"),
-            ),
+            const Leaderboard(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const Clock(),
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: const Text("snth"),
+                ),
+              ],
+            )
           ],
-        )
-      ],
+        ),
+      ),
     );
   }
 }

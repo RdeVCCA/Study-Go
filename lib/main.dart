@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (Platform.isWindows || Platform.isLinux) {
-      return Desktop();
+      return const Desktop();
     } else if (Platform.isAndroid) {
       return const Mobile();
     } else if (Platform.isIOS || Platform.isMacOS) {

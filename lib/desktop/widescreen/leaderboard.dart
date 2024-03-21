@@ -19,7 +19,7 @@ class Leaderboard extends StatelessWidget {
                 width: 1,
               ),
             ),
-            margin: const EdgeInsets.all(8),
+            margin: const EdgeInsets.fromLTRB(10, 8, 8, 8),
             child: SizedBox(
               child: Column(
                 children: <Widget>[
@@ -30,6 +30,7 @@ class Leaderboard extends StatelessWidget {
                     ),
                   ),
                   ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
@@ -68,13 +69,17 @@ class LeaderboardItem extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             width: 500,
-            child: Text("${index + 1}: Gay!"), // Name of account
+            child: Text(
+              "${index + 1}: Gay!",
+              // TODO implement name of leaderboard users
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(8),
             alignment: Alignment.centerRight,
             width: 100,
-            child: Text(
+            child: const Text(
+              // TODO implement score leaderboard
               "aoeuaoeu", // Score
               textAlign: TextAlign.right,
             ),
