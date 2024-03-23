@@ -1,7 +1,7 @@
+import 'package:app0000/desktop/widescreen/stopwatch.dart';
 import 'package:flutter/material.dart';
 
 import 'widescreen/leaderboard.dart';
-import 'widescreen/timer.dart';
 
 class Widescreen extends StatelessWidget {
   const Widescreen({
@@ -23,10 +23,10 @@ class Widescreen extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const Clock(),
+                const StopWatch(),
                 Container(
                   alignment: Alignment.topLeft,
-                  child: const Text("snth"),
+                  child: const Text("Gay!"),
                 ),
               ],
             )

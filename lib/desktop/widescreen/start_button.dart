@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app0000/globals.dart' as global;
 
 enum Status {
   stopped,
@@ -25,13 +26,13 @@ class _DesktopStartButtonState extends State<DesktopStartButton> {
       onPressed: () {
         switch (current) {
           case Status.stopped:
-            // Start timer
+            global.stopWatchController.start();
             setState(() {
               current = Status.running;
             });
             break;
           case Status.running:
-            // Stop timer
+            global.stopWatchController.stop();
             setState(() {
               current = Status.stopped;
             });
