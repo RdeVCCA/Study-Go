@@ -5,8 +5,7 @@ import 'fuschia/fuschia.dart';
 import 'desktop/desktop.dart';
 import 'mobile/mobile.dart';
 
-// Whoever is maintaining the code
-const String iosMaintainer = "Bon";
+import 'globals.dart' as global;
 
 void main() {
   runApp(
@@ -36,7 +35,7 @@ class Home extends StatelessWidget {
       return const Mobile();
     } else if (Platform.isIOS || Platform.isMacOS) {
       return const Text("Compiling for IOS or OSX is not supported.\n"
-          "Please contact $iosMaintainer to retrieve the code for your system.");
+          "Please contact ${global.iosMaintainer} to retrieve the code for your system.");
     } else {
       return const Fuschia();
     }
