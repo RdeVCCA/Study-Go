@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'widescreen.dart';
-import 'widescreen/app_bar.dart';
-import 'widescreen/start_button.dart';
+import 'package:app0000/desktop/widescreen.dart';
+import 'package:app0000/desktop/widescreen/app_bar.dart';
+import 'package:app0000/desktop/widescreen/start_button.dart';
 
 class Desktop extends StatefulWidget {
   const Desktop({

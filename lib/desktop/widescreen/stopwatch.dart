@@ -1,6 +1,8 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
 import 'package:app0000/globals.dart' as global;
 
 class StopWatchController extends ValueNotifier<int> {
@@ -69,7 +71,13 @@ class StopWatch extends StatelessWidget {
                         style: TextStyle(fontSize: 30),
                       ),
                     _ => Text(
-                        "${(value / 3600).floor().toString().padLeft(1, "0")}:${((value % 3600) / 60).floor().toString().padLeft(2, "0")}:${(value % 60).floor().toString().padLeft(2, "0")}",
+                        "${
+                        //
+                        (value / 3600).floor().toString().padLeft(1, "0")}:${
+                        //
+                        ((value % 3600) / 60).floor().toString().padLeft(2, "0")}:${
+                        //
+                        (value % 60).floor().toString().padLeft(2, "0")}",
                         style: const TextStyle(fontSize: 30),
                       )
                   };

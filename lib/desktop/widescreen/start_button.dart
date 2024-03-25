@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:app0000/globals.dart' as global;
 
 enum Status {
@@ -23,7 +24,7 @@ class _DesktopStartButtonState extends State<DesktopStartButton> {
   Widget build(BuildContext context) {
     return FloatingActionButton.small(
       shape: const CircleBorder(),
-      onPressed: () {
+      onPressed: () async {
         switch (current) {
           case Status.stopped:
             // global.stopWatchController.value = 32400;
@@ -42,7 +43,12 @@ class _DesktopStartButtonState extends State<DesktopStartButton> {
                   ),
                 ),
               );
+            } else {
+              await global.data?.update(
+                  'score', {'data': global.sysScore.value},
+                  where: "field=1");
             }
+
             global.stopWatchController.stop();
             setState(() {
               current = Status.stopped;

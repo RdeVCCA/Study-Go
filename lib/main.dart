@@ -1,13 +1,22 @@
-import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
 
-import 'fuschia/fuschia.dart';
-import 'desktop/desktop.dart';
-import 'mobile/mobile.dart';
+import 'package:flutter/material.dart';
 
-import 'globals.dart' as global;
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-void main() {
+import 'package:app0000/desktop/desktop.dart';
+import 'package:app0000/fuschia/fuschia.dart';
+import 'package:app0000/mobile/mobile.dart';
+import 'package:app0000/persistence.dart';
+import 'package:app0000/globals.dart' as global;
+
+void main() async {
+  sqfliteFfiInit();
+  databaseFactory = databaseFactoryFfi;
+  WidgetsFlutterBinding.ensureInitialized();
+
+  global.data = await persistence();
+
   runApp(
     const StudyGo(),
   );

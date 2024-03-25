@@ -1,5 +1,7 @@
-import 'desktop/widescreen/stopwatch.dart';
-import 'desktop/widescreen/sys_score.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'package:app0000/desktop/widescreen/stopwatch.dart';
+import 'package:app0000/desktop/widescreen/sys_score.dart';
 
 StopWatchController stopWatchController = StopWatchController();
 
@@ -7,3 +9,5 @@ StopWatchController stopWatchController = StopWatchController();
 const String iosMaintainer = "Bon";
 
 SysScoreController sysScore = SysScoreController();
+
+Database? data;
