@@ -53,22 +53,29 @@ class StopWatch extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.all(8),
           child: Center(
-            child: ListenableBuilder(
-              listenable: global.stopWatchController,
-              builder: (context, child) {
-                int value = global.stopWatchController.value;
-                return switch (value) {
-                  0 => const Text(
-                      "0:00:00",
-                      style: TextStyle(fontSize: 30),
-                    ),
-                  _ => Text(
-                      "${(value / 3600).floor().toString().padLeft(1, "0")}:${((value % 3600) / 60).floor().toString().padLeft(2, "0")}:${(value % 60).floor().toString().padLeft(2, "0")}",
-                      style: const TextStyle(fontSize: 30),
-                    )
-                };
-              },
-            ),
+            child: Column(children: <Widget>[
+              const Text(
+                textAlign: TextAlign.center,
+                "Session Time:",
+                style: TextStyle(fontSize: 20),
+              ),
+              ListenableBuilder(
+                listenable: global.stopWatchController,
+                builder: (context, child) {
+                  int value = global.stopWatchController.value;
+                  return switch (value) {
+                    0 => const Text(
+                        "0:00:00",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    _ => Text(
+                        "${(value / 3600).floor().toString().padLeft(1, "0")}:${((value % 3600) / 60).floor().toString().padLeft(2, "0")}:${(value % 60).floor().toString().padLeft(2, "0")}",
+                        style: const TextStyle(fontSize: 30),
+                      )
+                  };
+                },
+              ),
+            ]),
           ),
         ),
       ),
