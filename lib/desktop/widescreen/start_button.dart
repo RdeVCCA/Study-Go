@@ -26,12 +26,23 @@ class _DesktopStartButtonState extends State<DesktopStartButton> {
       onPressed: () {
         switch (current) {
           case Status.stopped:
+            // global.stopWatchController.value = 32400;
             global.stopWatchController.start();
             setState(() {
               current = Status.running;
             });
             break;
+
           case Status.running:
+            if (global.sysScore.add(global.stopWatchController.value)) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text(
+                    "Study sessions of more than 9 hours are not ranked.",
+                  ),
+                ),
+              );
+            }
             global.stopWatchController.stop();
             setState(() {
               current = Status.stopped;

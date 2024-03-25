@@ -1,5 +1,6 @@
 import 'package:app0000/desktop/widescreen/stopwatch.dart';
 import 'package:flutter/material.dart';
+import 'package:app0000/desktop/widescreen/sys_score.dart';
 
 import 'widescreen/leaderboard.dart';
 
@@ -26,7 +27,7 @@ class Widescreen extends StatelessWidget {
                 const StopWatch(),
                 Container(
                   alignment: Alignment.topLeft,
-                  child: const Text("Gay!"),
+                  child: const SysScore(),
                 ),
               ],
             )
