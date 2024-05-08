@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart';
+import 'package:sqlite3/sqlite3.dart';
 
 import 'package:app0000/desktop/widescreen/sys_score.dart';
 

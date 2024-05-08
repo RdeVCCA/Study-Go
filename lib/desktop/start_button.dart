@@ -44,9 +44,8 @@ class _DesktopStartButtonState extends State<DesktopStartButton> {
                 ),
               );
             } else {
-              await global.data?.update(
-                  'score', {'data': global.sysScore.value},
-                  where: "field=1");
+              global.data
+                  ?.execute("UPDATE score SET data = ? WHERE field IS 1");
             }
 
             global.stopWatchController.stop();

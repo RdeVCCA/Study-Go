@@ -2,7 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+// import 'package:sqlite3/sqlite3.dart';
 
 import 'package:app0000/desktop/desktop.dart';
 import 'package:app0000/fuschia/fuschia.dart';
@@ -13,9 +13,6 @@ import 'package:app0000/globals.dart' as global;
 import 'package:window_size/window_size.dart';
 
 void main() async {
-  sqfliteFfiInit();
-
-  databaseFactory = databaseFactoryFfi;
   WidgetsFlutterBinding.ensureInitialized();
 
   global.data = await persistence();

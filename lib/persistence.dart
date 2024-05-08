@@ -1,27 +1,25 @@
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-
-import 'package:path/path.dart';
+import 'package:sqlite3/sqlite3.dart';
 
 import 'package:app0000/globals.dart' as global;
 
 Future<Database> persistence() async {
-  return openDatabase(
-    join(await getDatabasesPath(), ".studyGo.db"),
-    onCreate: (db, version) async {
-      await db.execute(
-          r'CREATE TABLE score(field INTEGER PRIMARY KEY, data INTEGER)');
-      db.insert(r'score', {'field': 1, 'data': 0},
-          conflictAlgorithm: ConflictAlgorithm.replace);
-    },
-    version: 1,
-    onOpen: (db) async {
-      List<Map<String, Object?>> query = await db.query(r'score');
-      for (final {'field': field as int, 'data': score as int} in query) {
-        if (field == 1) {
-          global.sysScore.value = score;
-          break;
-        }
-      }
-    },
-  );
+  Database db = sqlite3.open("C:/docs/database.db");
+
+  db.execute(r"CREATE TABLE IF NOT EXISTS score("
+      "  field INTEGER,"
+      "  data INTEGER"
+      ");"
+      "INSERT INTO score ("
+      "  field,"
+      "  data"
+      ") VALUES ("
+      "  1,"
+      "  0"
+      ");");
+
+  ResultSet score = db.select("SELECT * FROM score WHERE field IS 1");
+
+  global.sysScore.value = score.first.values[0] as int;
+
+  return db;
 }
