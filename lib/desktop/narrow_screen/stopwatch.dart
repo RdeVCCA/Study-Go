@@ -1,4 +1,4 @@
-import 'package:app0000/globals.dart' as global;
+import 'package:study_go/globals.dart' as global;
 import 'package:flutter/material.dart';
 
 class Stopwatch extends StatelessWidget {
@@ -34,13 +34,7 @@ class Stopwatch extends StatelessWidget {
                       style: TextStyle(fontSize: 30),
                     ),
                   _ => Text(
-                      "${
-                      //
-                      (value / 3600).floor().toString().padLeft(2, "0")}:${
-                      //
-                      ((value % 3600) / 60).floor().toString().padLeft(2, "0")}:${
-                      //
-                      (value % 60).floor().toString().padLeft(2, "0")}",
+                      "${(value / 3600).floor().toString().padLeft(2, "0")}:${((value % 3600) / 60).floor().toString().padLeft(2, "0")}:${(value % 60).floor().toString().padLeft(2, "0")}",
                       style: const TextStyle(fontSize: 30),
                     )
                 };

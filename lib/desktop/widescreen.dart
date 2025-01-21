@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:app0000/desktop/widescreen/stopwatch.dart';
-import 'package:app0000/desktop/widescreen/sys_score.dart';
-import 'package:app0000/desktop/widescreen/leaderboard.dart';
+import 'package:study_go/desktop/widescreen/stopwatch.dart';
+import 'package:study_go/desktop/widescreen/sys_score.dart';
+import 'package:study_go/desktop/widescreen/leaderboard.dart';
 
 class Widescreen extends StatelessWidget {
   const Widescreen({
@@ -12,9 +12,9 @@ class Widescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffeeeeee),
+      color: Colors.grey,
       child: Container(
-        color: const Color(0xffffffff),
+        color: Colors.white,
         width: 900,
         alignment: Alignment.center,
         child: Row(

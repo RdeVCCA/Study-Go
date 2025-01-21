@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app0000/globals.dart' as global;
+import 'package:study_go/globals.dart' as global;
 
 class SysScoreController extends ValueNotifier<int> {
   SysScoreController() : super(0);

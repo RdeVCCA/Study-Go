@@ -1,6 +1,6 @@
 import 'package:sqlite3/sqlite3.dart';
 
-import 'package:app0000/globals.dart' as global;
+import 'package:study_go/globals.dart' as global;
 
 Future<Database> persistence() async {
   Database db = sqlite3.open("C:/docs/database.db");

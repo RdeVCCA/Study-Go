@@ -7,6 +7,15 @@ class Mobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Study Go"),
+        backgroundColor: Theme.of(context).appBarTheme.foregroundColor,
+      ),
+      body: Container(
+        color: Theme.of(context).scaffoldBackgroundColor,
+      ),
+      drawer: Drawer(),
+    );
   }
 }

@@ -1,5 +1,5 @@
-name: app0000
-description: "A new Flutter project."
+name: "study_go"
+description: "YPT, but with fewer sweats."
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  mysql_utils: ^2.1.5
   path: ^1.9.0
   sqlite3: ^2.4.2
   sqlite3_flutter_libs: ^0.5.21

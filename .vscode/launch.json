@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "app0000",
+            "name": "study_go",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "app0000 (profile mode)",
+            "name": "study_go (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "app0000 (release mode)",
+            "name": "study_go (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

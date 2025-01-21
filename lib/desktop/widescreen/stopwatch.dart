@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:app0000/globals.dart' as global;
+import 'package:study_go/globals.dart' as global;
 
 class StopWatch extends StatelessWidget {
   const StopWatch({super.key});

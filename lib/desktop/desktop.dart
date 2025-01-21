@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:app0000/desktop/widescreen.dart';
-import 'package:app0000/desktop/app_bar.dart';
-import 'package:app0000/desktop/start_button.dart';
+import 'package:study_go/desktop/widescreen.dart';
+import 'package:study_go/desktop/app_bar.dart';
+import 'package:study_go/desktop/start_button.dart';
 
 import 'narrow_screen.dart';
 

@@ -1,3 +1,3 @@
-# app0000
+# study_go
 
 A new Flutter project.

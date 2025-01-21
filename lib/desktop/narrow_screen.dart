@@ -1,6 +1,6 @@
-import 'package:app0000/desktop/narrow_screen/leaderboard.dart';
-import 'package:app0000/desktop/narrow_screen/stopwatch.dart';
-import 'package:app0000/desktop/narrow_screen/sys_score.dart';
+import 'package:study_go/desktop/narrow_screen/leaderboard.dart';
+import 'package:study_go/desktop/narrow_screen/stopwatch.dart';
+import 'package:study_go/desktop/narrow_screen/sys_score.dart';
 import 'package:flutter/material.dart';
 
 class NarrowScreen extends StatelessWidget {

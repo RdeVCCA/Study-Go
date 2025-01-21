@@ -1,6 +1,6 @@
 {
-    "name": "app0000",
-    "short_name": "app0000",
+    "name": "study_go",
+    "short_name": "study_go",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
