@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mysql_client/mysql_client.dart';
 import 'package:logger/logger.dart';
 import 'package:study_go/database.dart';
+import 'package:study_go/timers.dart';
+import 'package:study_go/widgets/master_timer.dart';
 import 'package:study_go/widgets/subjects.dart';
 
 void main() async {
@@ -80,20 +82,6 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _incrementCounter60() {
-    setState(() {
-      _counter += 60;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     ThemeData mainTheme = Theme.of(context);
@@ -106,17 +94,7 @@ class _IndexState extends State<Index> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "${(_counter / 3600).floor()}:"
-                  "${(_counter % 3600 / 60).floor().toString().padLeft(2, '0')}:"
-                  "${(_counter % 60).toString().padLeft(2, '0')}",
-                  style: mainTheme.textTheme.headlineLarge,
-                ),
-              ],
-            ),
+            MasterTimer(mainTheme: mainTheme),
             ListView(
               shrinkWrap: true,
               children: [
@@ -130,17 +108,24 @@ class _IndexState extends State<Index> {
         child: Column(
           children: [
             MenuItemButton(
-              onPressed: _incrementCounter60,
               child: Text("aoeu"),
             )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: globalTimer.started.value
+          ? FloatingActionButton(
+              backgroundColor: Colors.redAccent,
+              onPressed: () => setState(globalTimer.stop),
+              tooltip: "Stop",
+              child: const Icon(Icons.stop),
+            )
+          : FloatingActionButton(
+              backgroundColor: Colors.greenAccent,
+              onPressed: () => setState(globalTimer.start),
+              tooltip: "Start",
+              child: const Icon(Icons.play_arrow),
+            ),
     );
   }
 }

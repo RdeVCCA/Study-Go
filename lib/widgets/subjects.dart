@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Subjects extends StatefulWidget {
+class Subjects extends StatelessWidget {
   const Subjects({super.key, required this.subjectName});
 
   final String subjectName;
 
-  @override
-  State<StatefulWidget> createState() {
-    return _SubjectState();
-  }
-}
-
-class _SubjectState extends State<Subjects> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -26,9 +19,10 @@ class _SubjectState extends State<Subjects> {
         ),
         child: Row(
           children: [
+            // TODO remember this exists, dumbass
             Expanded(
               child: Text(
-                widget.subjectName,
+                subjectName,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -38,6 +32,7 @@ class _SubjectState extends State<Subjects> {
             ),
             MenuItemButton(
               leadingIcon: Icon(Icons.play_arrow),
+              // Literally the steps the aztecs used to climb their pyramids
             ),
           ],
         ),
